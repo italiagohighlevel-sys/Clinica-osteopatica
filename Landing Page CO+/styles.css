@@ -1,0 +1,335 @@
+/* ============================================
+   CO+ Clinica Osteopatica — Landing Page
+   Design tokens ispirati a shadcn/ui, applicati
+   alla palette reale del brand (petrolio + rosso)
+   ============================================ */
+
+:root{
+  --background: #FBF9F5;
+  --surface: #FFFFFF;
+  --surface-muted: #F3EFE7;
+  --foreground: #1B211D;
+  --muted-foreground: #666B60;
+  --border: #E3DDCF;
+  --primary: #164A50;
+  --primary-hover: #0F373C;
+  --primary-foreground: #FFFFFF;
+  --accent: #C6273B;
+  --accent-hover: #A81F31;
+  --accent-foreground: #FFFFFF;
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 1px 2px rgba(20,24,20,0.06);
+  --shadow: 0 8px 24px -8px rgba(20,24,20,0.16);
+  --shadow-lg: 0 24px 48px -16px rgba(20,24,20,0.22);
+  --whatsapp-bar-h: 60px;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Work Sans', -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-bottom: var(--whatsapp-bar-h);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3{
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+img{ max-width: 100%; display:block; }
+a{ color: inherit; text-decoration: none; }
+ul{ list-style: none; }
+
+.wrap{
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.eyebrow{
+  display: inline-block;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.section-sub{
+  color: var(--muted-foreground);
+  font-size: 16px;
+  max-width: 46ch;
+  margin-top: 10px;
+}
+
+/* ============ HEADER ============ */
+.site-header{
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.header-inner{ display:flex; align-items:center; }
+.logo{ height: 34px; width:auto; }
+
+/* ============ HERO (above the fold) ============ */
+.hero{
+  padding: 32px 0 40px;
+  background: var(--surface);
+}
+.hero-inner{ text-align:center; }
+.hero h1{
+  font-size: clamp(26px, 6vw, 34px);
+  max-width: 20ch;
+  margin: 0 auto 10px;
+}
+.hero-sub{
+  color: var(--muted-foreground);
+  font-size: 16px;
+  margin-bottom: 22px;
+}
+
+.form-card{
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  max-width: 440px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Placeholder del modulo GHL — da rimuovere quando si incolla l'embed reale */
+.form-placeholder{ text-align:left; }
+.form-placeholder-label{
+  display:block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin-bottom: 12px;
+  text-align: center;
+}
+.fake-field{
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  margin-bottom: 10px;
+}
+.fake-button{
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-foreground);
+  display:flex; align-items:center; justify-content:center;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ============ BOTTONI GENERICI ============ */
+.btn{
+  display:inline-block;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-primary{
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover{ background: var(--primary-hover); transform: translateY(-1px); box-shadow: var(--shadow); }
+
+/* ============ SEZIONI GENERICHE ============ */
+section{ padding: 64px 0; }
+section .wrap{ text-align:center; }
+section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; }
+
+.video-section{ background: var(--surface-muted); }
+
+.video-placeholder{
+  margin: 28px auto 0;
+  max-width: 720px;
+  aspect-ratio: 16/9;
+  background: linear-gradient(160deg, var(--primary) 0%, #0F3438 100%);
+  border-radius: var(--radius-lg);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap: 14px;
+  box-shadow: var(--shadow);
+}
+.play-button{
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.4);
+  display:flex; align-items:center; justify-content:center;
+  color: #fff;
+}
+.video-placeholder-label{
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+/* ============ CHECKLIST PROBLEMI ============ */
+.problems-list{
+  max-width: 480px;
+  margin: 28px auto 32px;
+  text-align: left;
+  display: grid;
+  gap: 10px;
+}
+.problems-list li{
+  display:flex; align-items:center; gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 15.5px;
+}
+.check{
+  flex-shrink:0;
+  width: 24px; height:24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size: 13px;
+}
+
+/* ============ PROCESS (3 STEP) ============ */
+.process{ background: var(--surface); }
+.process-grid{
+  margin-top: 32px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+  text-align: left;
+}
+.process-card{
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.process-number{
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  color: var(--accent);
+  display:block;
+  margin-bottom: 8px;
+}
+.process-card h3{ font-size: 18px; margin-bottom: 8px; }
+.process-card p{ color: var(--muted-foreground); font-size: 14.5px; }
+
+/* ============ TRATTAMENTI ============ */
+.treatments{ background: var(--surface-muted); }
+.treatments-grid{
+  margin-top: 32px;
+  display:grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  text-align:left;
+}
+.treatment-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.treatment-card:hover{ box-shadow: var(--shadow); transform: translateY(-2px); }
+.treatment-card h3{ font-size: 18px; margin-bottom: 8px; color: var(--primary); }
+.treatment-card p{ color: var(--muted-foreground); font-size: 14.5px; }
+
+/* ============ TEAM ============ */
+.team-grid{
+  margin-top: 24px;
+  display:grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.team-card{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+.team-photo-placeholder{
+  width: 96px; height:96px;
+  border-radius: 50%;
+  background: var(--surface-muted);
+  border: 1px dashed var(--border);
+}
+.team-name{ font-weight:600; font-size:14.5px; margin-top:6px; }
+.team-role{ color: var(--muted-foreground); font-size:13px; }
+
+/* ============ SEDI ============ */
+.locations{ background: var(--surface); }
+.locations-grid{
+  margin-top: 24px;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+}
+.location-chip{
+  background: var(--primary);
+  color: var(--primary-foreground);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ============ FOOTER ============ */
+.site-footer{
+  background: var(--foreground);
+  color: rgba(255,255,255,0.75);
+  padding: 36px 0;
+  text-align:center;
+}
+.footer-logo{ height: 30px; margin: 0 auto 14px; border-radius: 6px; }
+.footer-contact{ font-size: 14px; margin-bottom: 4px; }
+.footer-legal{ font-size: 12.5px; color: rgba(255,255,255,0.5); }
+
+/* ============ BARRA WHATSAPP FISSA ============ */
+.whatsapp-bar{
+  position: fixed;
+  left:0; right:0; bottom:0;
+  height: var(--whatsapp-bar-h);
+  background: #1E8E5A;
+  color: #fff;
+  display:flex; align-items:center; justify-content:center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  z-index: 50;
+  opacity: 0.6; /* non ancora collegata: leggero stato "disabled" visivo */
+}
+
+/* ============ SCROLL REVEAL ============ */
+.reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform: translateY(0); }
+
+/* ============ RESPONSIVE (tablet+) ============ */
+@media (min-width: 640px){
+  .process-grid{ grid-template-columns: repeat(3, 1fr); }
+  .treatments-grid{ grid-template-columns: repeat(2, 1fr); }
+  .team-grid{ grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 900px){
+  .treatments-grid{ grid-template-columns: repeat(4, 1fr); }
+  .hero{ padding: 48px 0 56px; }
+}
