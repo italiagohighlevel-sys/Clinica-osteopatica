@@ -80,7 +80,7 @@ ul{ list-style: none; }
 /* ============ HEADER ============ */
 .site-header{
   padding: 26px 0;
-  background: linear-gradient(120deg, #0F373C, #1B5B62, #164A50, #0C2E32);
+  background: linear-gradient(120deg, #000000, #0D0D0D, #050505, #000000);
   background-size: 300% 300%;
   animation: header-flow 10s ease-in-out infinite;
   position: relative;
