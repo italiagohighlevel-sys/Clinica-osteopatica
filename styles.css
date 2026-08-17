@@ -225,31 +225,85 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   display:flex; align-items:center; justify-content:center;
   font-size: 13px;
 }
+.problems-closing{
+  max-width: 480px;
+  margin: 0 auto 24px;
+  font-style: italic;
+  color: var(--muted-foreground);
+  font-size: 14.5px;
+}
 
-/* ============ PROCESS (3 STEP) ============ */
+/* ============ PERCHÉ SCEGLIERE CO+ ============ */
+.why{ background: var(--primary); color: rgba(255,255,255,0.92); position: relative; overflow: hidden; }
+.why-inner{ max-width: 680px; position: relative; }
+.why .eyebrow{ color: #F0B4A8; }
+.why h2{ color: #fff; }
+.why-quote-mark{
+  display:block;
+  font-family: 'Fraunces', serif;
+  font-size: 100px;
+  line-height: 1;
+  color: rgba(255,255,255,0.18);
+  margin: 6px 0 -18px;
+}
+.why-lead{ font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 14px; }
+.why p{ color: rgba(255,255,255,0.8); font-size: 15px; margin-bottom: 12px; }
+.why strong{ color: #fff; }
+
+/* ============ PROCESS (4 STEP TIMELINE) ============ */
 .process{ background: var(--surface); }
-.process-grid{
-  margin-top: 32px;
+.timeline{
+  margin-top: 40px;
   display: grid;
-  gap: 18px;
-  grid-template-columns: 1fr;
+  gap: 0;
   text-align: left;
 }
-.process-card{
-  background: var(--surface-muted);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
+.timeline-step{
+  position: relative;
+  padding: 0 0 32px 44px;
+  border-left: 2px solid var(--border);
 }
-.process-number{
+.timeline-step:last-child{ border-left-color: transparent; padding-bottom: 0; }
+.timeline-dot{
+  position: absolute;
+  left: -19px; top: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display:flex; align-items:center; justify-content:center;
   font-family: 'Fraunces', serif;
-  font-size: 28px;
-  color: var(--accent);
-  display:block;
-  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 15px;
 }
-.process-card h3{ font-size: 18px; margin-bottom: 8px; }
-.process-card p{ color: var(--muted-foreground); font-size: 14.5px; }
+.timeline-step h3{ font-size: 17px; margin-bottom: 4px; }
+.timeline-step p{ color: var(--muted-foreground); font-size: 14.5px; }
+
+/* ============ LA PRIMA VISITA COMPRENDE ============ */
+.first-visit{ background: var(--surface-muted); }
+.first-visit-grid{
+  margin-top: 28px;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+.fv-item{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 14.5px;
+  position: relative;
+  padding-left: 40px;
+}
+.fv-item::before{
+  content: "✓";
+  position: absolute;
+  left: 14px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-weight: 700;
+}
 
 /* ============ TRATTAMENTI ============ */
 .treatments{ background: var(--surface-muted); }
@@ -273,6 +327,20 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .treatment-card p{ color: var(--muted-foreground); font-size: 14.5px; }
 
 /* ============ TEAM ============ */
+.role-pills{
+  margin: 20px auto 32px;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
+  max-width: 520px;
+}
+.role-pill{
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 8px 16px;
+  border-radius: 999px;
+}
 .team-grid{
   margin-top: 24px;
   display:grid;
@@ -357,6 +425,22 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   margin: 0;
 }
 
+/* ============ CTA FINALE ============ */
+.final-cta{
+  background: #000000;
+  color: #fff;
+  text-align: center;
+}
+.final-cta h2{ color: #fff; max-width: 20ch; margin: 0 auto 16px; }
+.final-cta p{ color: rgba(255,255,255,0.75); max-width: 52ch; margin: 0 auto 18px; }
+.final-cta-tagline{ font-weight: 600; color: #fff !important; margin-bottom: 26px !important; }
+.btn-accent{
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 30px -8px rgba(198,39,59,0.6);
+}
+.btn-accent:hover{ background: var(--accent-hover); transform: translateY(-1px); }
+
 /* ============ FOOTER ============ */
 .site-footer{
   background: #000000;
@@ -404,11 +488,22 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 
 /* ============ RESPONSIVE (tablet+) ============ */
 @media (min-width: 640px){
-  .process-grid{ grid-template-columns: repeat(3, 1fr); }
   .treatments-grid{ grid-template-columns: repeat(2, 1fr); }
   .team-grid{ grid-template-columns: repeat(4, 1fr); }
+  .first-visit-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 900px){
   .treatments-grid{ grid-template-columns: repeat(4, 1fr); }
   .hero{ padding: 48px 0 56px; }
+  .timeline{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .timeline-step{
+    border-left: none;
+    border-top: 2px solid var(--border);
+    padding: 28px 12px 0 0;
+  }
+  .timeline-step:last-child{ border-top-color: var(--border); }
+  .timeline-dot{ left: -18px; top: -18px; }
 }
