@@ -23,7 +23,7 @@
   --shadow-sm: 0 1px 2px rgba(20,24,20,0.06);
   --shadow: 0 8px 24px -8px rgba(20,24,20,0.16);
   --shadow-lg: 0 24px 48px -16px rgba(20,24,20,0.22);
-  --whatsapp-bar-h: 60px;
+  --whatsapp-bar-h: 90px;
 }
 
 *{ box-sizing: border-box; margin:0; padding:0; }
@@ -315,19 +315,32 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .footer-contact{ font-size: 14px; margin-bottom: 4px; }
 .footer-legal{ font-size: 12.5px; color: rgba(255,255,255,0.5); }
 
-/* ============ BARRA WHATSAPP FISSA ============ */
+/* ============ PILLOLA WHATSAPP FISSA ============ */
 .whatsapp-bar{
   position: fixed;
-  left:0; right:0; bottom:0;
-  height: var(--whatsapp-bar-h);
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  max-width: calc(100vw - 40px);
   background: #1E8E5A;
   color: #fff;
   display:flex; align-items:center; justify-content:center;
   gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: center;
+  box-shadow: 0 10px 30px -6px rgba(0,0,0,0.35);
   z-index: 50;
   opacity: 0.6; /* non ancora collegata: leggero stato "disabled" visivo */
+}
+.whatsapp-bar svg{ flex-shrink: 0; }
+
+@media (min-width: 480px){
+  .whatsapp-bar{ font-size: 15px; padding: 14px 28px; }
+  .whatsapp-bar span{ white-space: nowrap; }
 }
 
 /* ============ SCROLL REVEAL ============ */
