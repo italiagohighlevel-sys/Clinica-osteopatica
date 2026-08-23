@@ -155,14 +155,36 @@ ul{ list-style: none; }
 
 /* ============ BOTTONI GENERICI ============ */
 .btn{
+  position: relative;
   display:inline-block;
   padding: 14px 28px;
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 15px;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  animation: btn-bounce 2.8s ease-in-out infinite;
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--btn-ring, currentColor);
+  animation: btn-ring 2.8s ease-out infinite;
+  pointer-events: none;
+}
+.btn:hover{ animation-play-state: paused; }
+.btn:hover::before{ animation-play-state: paused; opacity: 0; }
+@keyframes btn-bounce{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-3px); }
+}
+@keyframes btn-ring{
+  0%{ transform: scale(1); opacity: .55; }
+  100%{ transform: scale(1.16); opacity: 0; }
 }
 .btn-primary{
+  --btn-ring: var(--primary);
   background: var(--primary);
   color: var(--primary-foreground);
   box-shadow: var(--shadow-sm);
@@ -565,6 +587,7 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .final-cta p{ color: rgba(255,255,255,0.75); max-width: 52ch; margin: 0 auto 18px; }
 .final-cta-tagline{ font-weight: 600; color: #fff !important; margin-bottom: 26px !important; }
 .btn-accent{
+  --btn-ring: var(--accent);
   background: var(--accent);
   color: #fff;
   box-shadow: 0 10px 30px -8px rgba(198,39,59,0.6);
