@@ -602,6 +602,7 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   margin: 0 auto 28px;
 }
 .btn-whatsapp{
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -614,8 +615,26 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   box-shadow: 0 14px 32px -10px rgba(34,197,94,0.55);
   opacity: 0.75; /* non ancora collegata: leggero stato "disabled" visivo */
   transition: transform .2s ease, box-shadow .2s ease;
+  animation: btn-wa-bounce 2.6s ease-in-out infinite;
 }
-.btn-whatsapp:hover{ transform: translateY(-2px); box-shadow: 0 18px 36px -8px rgba(34,197,94,0.6); }
+.btn-whatsapp::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2px solid #22C55E;
+  animation: btn-wa-ring 2.6s ease-out infinite;
+  pointer-events: none;
+}
+.btn-whatsapp:hover{ transform: translateY(-2px) scale(1.03); box-shadow: 0 18px 36px -8px rgba(34,197,94,0.6); }
+@keyframes btn-wa-bounce{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-4px); }
+}
+@keyframes btn-wa-ring{
+  0%{ transform: scale(1); opacity: .6; }
+  100%{ transform: scale(1.18); opacity: 0; }
+}
 .thankyou-locations{ margin-top: 44px; }
 .thankyou-locations-label{
   display:block;
