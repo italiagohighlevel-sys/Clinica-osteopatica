@@ -251,7 +251,7 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .why strong{ color: #fff; }
 
 /* ============ RECENSIONI GOOGLE ============ */
-.reviews{ background: var(--surface); }
+.reviews{ background: var(--surface); padding-bottom: 32px; }
 .reviews-badge{
   margin: 24px auto 20px;
   display: inline-flex;
@@ -333,7 +333,7 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 }
 
 /* ============ PROCESS (4 STEP TIMELINE) ============ */
-.process{ background: var(--surface); }
+.process{ background: var(--surface); padding-top: 32px; padding-bottom: 32px; }
 .timeline{
   margin-top: 40px;
   display: grid;
@@ -362,7 +362,7 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .timeline-step p{ color: var(--muted-foreground); font-size: 14.5px; }
 
 /* ============ LA PRIMA VISITA COMPRENDE ============ */
-.first-visit{ background: var(--surface-muted); }
+.first-visit{ background: var(--surface-muted); padding-top: 32px; padding-bottom: 32px; }
 .first-visit-grid{
   margin-top: 28px;
   display: grid;
@@ -388,7 +388,7 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 }
 
 /* ============ TRATTAMENTI ============ */
-.treatments{ background: var(--surface-muted); }
+.treatments{ background: var(--surface-muted); padding-top: 32px; }
 .treatments-grid{
   margin-top: 32px;
   display:grid;
