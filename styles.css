@@ -74,7 +74,7 @@ ul{ list-style: none; }
   color: var(--muted-foreground);
   font-size: 16px;
   max-width: 46ch;
-  margin-top: 10px;
+  margin: 10px auto 0;
 }
 
 /* ============ HEADER ============ */
