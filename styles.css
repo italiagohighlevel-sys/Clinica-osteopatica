@@ -516,11 +516,11 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   width: 44px; height: 44px;
   border-radius: 12px;
   background: var(--surface-muted);
-  color: var(--primary);
+  color: var(--accent);
   margin-bottom: 14px;
   transition: background .2s ease, color .2s ease;
 }
-.treatment-card:hover .treatment-icon{ background: var(--primary); color: #fff; }
+.treatment-card:hover .treatment-icon{ background: var(--accent); color: #fff; }
 .treatment-card h3{ font-size: 18px; margin-bottom: 8px; color: var(--primary); }
 .treatment-card p{ color: var(--muted-foreground); font-size: 14.5px; }
 
