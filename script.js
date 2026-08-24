@@ -54,14 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.4 });
   statNumbers.forEach((el) => statObserver.observe(el));
 
-  // Barra di progresso scroll in cima alla pagina
+  // Barra di progresso scroll (orizzontale in alto su desktop, verticale a
+  // sinistra su mobile — l'orientamento lo decide il CSS via media query,
+  // qui impostiamo solo la percentuale come variabile CSS)
   const progressBar = document.getElementById('scrollProgress');
   if (progressBar) {
     let ticking = false;
     const updateProgress = () => {
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-      progressBar.style.width = pct + '%';
+      progressBar.style.setProperty('--scroll-pct', pct + '%');
       ticking = false;
     };
     window.addEventListener('scroll', () => {

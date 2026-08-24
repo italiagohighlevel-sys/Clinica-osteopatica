@@ -33,12 +33,27 @@ html{ scroll-behavior: smooth; }
 /* ============ BARRA DI PROGRESSO SCROLL ============ */
 .scroll-progress{
   position: fixed;
-  top: 0; left: 0;
-  height: 3px;
-  width: 0%;
-  background: linear-gradient(90deg, var(--accent), var(--primary));
   z-index: 100;
-  transition: width .1s linear;
+}
+/* Mobile: barra verticale a sinistra */
+@media (max-width: 639px){
+  .scroll-progress{
+    top: 0; left: 0;
+    width: 4px;
+    height: var(--scroll-pct, 0%);
+    background: linear-gradient(180deg, var(--accent), var(--primary));
+    transition: height .1s linear;
+  }
+}
+/* Tablet/desktop: barra orizzontale in alto */
+@media (min-width: 640px){
+  .scroll-progress{
+    top: 0; left: 0;
+    height: 3px;
+    width: var(--scroll-pct, 0%);
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    transition: width .1s linear;
+  }
 }
 
 body{
