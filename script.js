@@ -53,4 +53,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.4 });
   statNumbers.forEach((el) => statObserver.observe(el));
+
+  // Barra di progresso scroll in cima alla pagina
+  const progressBar = document.getElementById('scrollProgress');
+  if (progressBar) {
+    let ticking = false;
+    const updateProgress = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      progressBar.style.width = pct + '%';
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateProgress();
+  }
 });

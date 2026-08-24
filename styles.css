@@ -30,6 +30,17 @@
 
 html{ scroll-behavior: smooth; }
 
+/* ============ BARRA DI PROGRESSO SCROLL ============ */
+.scroll-progress{
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  z-index: 100;
+  transition: width .1s linear;
+}
+
 body{
   background: var(--background);
   color: var(--foreground);
