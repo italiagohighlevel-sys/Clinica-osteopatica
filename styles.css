@@ -281,6 +281,9 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   filter: blur(60px);
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 .problems::before{
   width: 260px; height: 260px;
@@ -343,7 +346,22 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .why strong{ color: #fff; }
 
 /* ============ RECENSIONI GOOGLE ============ */
-.reviews{ background: var(--surface); padding-bottom: 32px; }
+.reviews{ background: var(--surface); padding-bottom: 32px; position: relative; overflow: hidden; }
+.reviews::before{
+  content: "";
+  position: absolute;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  filter: blur(65px);
+  background: rgba(242,169,59,0.14);
+  top: -80px; right: -60px;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.reviews .wrap{ position: relative; z-index: 1; }
 .reviews-badge{
   margin: 24px auto 20px;
   display: inline-flex;
@@ -525,6 +543,22 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .treatment-card p{ color: var(--muted-foreground); font-size: 14.5px; }
 
 /* ============ TEAM ============ */
+.team{ position: relative; overflow: hidden; }
+.team::before{
+  content: "";
+  position: absolute;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  filter: blur(70px);
+  background: rgba(22,74,80,0.10);
+  bottom: -100px; left: -80px;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.team .wrap{ position: relative; z-index: 1; }
 .role-pills{
   margin: 20px auto 32px;
   display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
@@ -602,6 +636,9 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   top: -110px; left: -90px;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 .faq::after{
   content: "";
@@ -613,6 +650,9 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   bottom: -80px; right: -70px;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 .faq .wrap{ position: relative; z-index: 1; }
 .faq-list{
