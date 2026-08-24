@@ -273,6 +273,26 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 }
 
 /* ============ CHECKLIST PROBLEMI ============ */
+.problems{ position: relative; overflow: hidden; }
+.problems::before, .problems::after{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+.problems::before{
+  width: 260px; height: 260px;
+  background: rgba(198,39,59,0.12);
+  top: -100px; right: -80px;
+}
+.problems::after{
+  width: 220px; height: 220px;
+  background: rgba(22,74,80,0.10);
+  bottom: -90px; left: -70px;
+}
+.problems .wrap{ position: relative; z-index: 1; }
 .problems-list{
   max-width: 480px;
   margin: 28px auto 32px;
@@ -489,6 +509,18 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   transition: box-shadow .2s ease, transform .2s ease;
 }
 .treatment-card:hover{ box-shadow: var(--shadow); transform: translateY(-2px); }
+.treatment-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--surface-muted);
+  color: var(--primary);
+  margin-bottom: 14px;
+  transition: background .2s ease, color .2s ease;
+}
+.treatment-card:hover .treatment-icon{ background: var(--primary); color: #fff; }
 .treatment-card h3{ font-size: 18px; margin-bottom: 8px; color: var(--primary); }
 .treatment-card p{ color: var(--muted-foreground); font-size: 14.5px; }
 
@@ -559,7 +591,30 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 }
 
 /* ============ FAQ ============ */
-.faq{ background: var(--surface-muted); }
+.faq{ background: var(--surface-muted); position: relative; overflow: hidden; }
+.faq::before{
+  content: "";
+  position: absolute;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  filter: blur(70px);
+  background: rgba(22,74,80,0.10);
+  top: -110px; left: -90px;
+  pointer-events: none;
+  z-index: 0;
+}
+.faq::after{
+  content: "";
+  position: absolute;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  filter: blur(60px);
+  background: rgba(198,39,59,0.10);
+  bottom: -80px; right: -70px;
+  pointer-events: none;
+  z-index: 0;
+}
+.faq .wrap{ position: relative; z-index: 1; }
 .faq-list{
   margin: 28px auto 0;
   max-width: 640px;
@@ -638,6 +693,7 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 }
 .thankyou-inner{ max-width: 560px; text-align: center; }
 .thankyou-badge{
+  position: relative;
   width: 72px; height: 72px;
   margin: 0 auto 20px;
   border-radius: 50%;
@@ -646,6 +702,33 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 12px 28px -8px rgba(22,74,80,0.5);
   animation: badge-pop .5s cubic-bezier(.2,.9,.3,1.4) both;
+}
+.check-draw{
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: check-draw .4s .45s ease-out both;
+}
+@keyframes check-draw{
+  to{ stroke-dashoffset: 0; }
+}
+.confetti{
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 7px; height: 7px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0;
+  animation: confetti-burst .7s .4s ease-out both;
+}
+.confetti.c1{ background: var(--accent); --tx: -46px; --ty: -34px; --rot: 30deg; }
+.confetti.c2{ background: var(--primary-hover); --tx: 44px; --ty: -38px; --rot: -25deg; animation-delay: .44s; }
+.confetti.c3{ background: #F2A93B; --tx: -52px; --ty: 10px; --rot: 60deg; animation-delay: .48s; border-radius: 50%; }
+.confetti.c4{ background: var(--accent); --tx: 50px; --ty: 14px; --rot: -50deg; animation-delay: .42s; border-radius: 50%; }
+.confetti.c5{ background: #F2A93B; --tx: -20px; --ty: -52px; --rot: 15deg; animation-delay: .5s; }
+.confetti.c6{ background: var(--primary-hover); --tx: 22px; --ty: -50px; --rot: -15deg; animation-delay: .46s; border-radius: 50%; }
+@keyframes confetti-burst{
+  0%{ opacity: 1; transform: translate(-50%, -50%) rotate(0); }
+  100%{ opacity: 0; transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) rotate(var(--rot)); }
 }
 @keyframes badge-pop{
   0%{ transform: scale(0); opacity: 0; }
