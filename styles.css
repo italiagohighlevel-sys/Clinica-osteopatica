@@ -149,6 +149,11 @@ ul{ list-style: none; }
   margin: 0 auto;
   box-shadow: var(--shadow-sm);
 }
+.form-card--embed{
+  padding: 8px;
+  height: 812px;
+  overflow: hidden;
+}
 
 /* Placeholder del modulo GHL — da rimuovere quando si incolla l'embed reale */
 .form-placeholder{ text-align:left; }
