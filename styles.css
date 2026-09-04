@@ -163,8 +163,8 @@ ul{ list-style: none; }
   animation: form-glow-color 4s ease-in-out infinite;
 }
 @keyframes form-glow-color{
-  0%, 100%{ box-shadow: 0 0 0 3px rgba(198,39,59,0.45), 0 0 32px 10px rgba(198,39,59,0.45); }
-  50%{ box-shadow: 0 0 0 3px rgba(22,74,80,0.45), 0 0 32px 10px rgba(22,74,80,0.45); }
+  0%, 100%{ box-shadow: 0 0 0 2px rgba(198,39,59,0.25), 0 0 26px 8px rgba(198,39,59,0.22); }
+  50%{ box-shadow: 0 0 0 2px rgba(22,74,80,0.25), 0 0 26px 8px rgba(22,74,80,0.22); }
 }
 
 /* Placeholder del modulo GHL — da rimuovere quando si incolla l'embed reale */
