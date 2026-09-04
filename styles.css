@@ -154,6 +154,7 @@ ul{ list-style: none; }
   background: #fff;
   border: none;
   box-shadow: none;
+  border-radius: 28px;
   padding: 5px;
   height: 812px;
   overflow: hidden;
@@ -163,12 +164,15 @@ ul{ list-style: none; }
   content: "";
   position: absolute;
   inset: -4px;
-  border-radius: calc(var(--radius-lg) + 4px);
+  border-radius: 32px;
   background: linear-gradient(120deg, var(--primary), var(--accent), var(--primary), var(--accent));
   background-size: 300% 300%;
   animation: form-glow 5s ease infinite;
   filter: blur(10px);
   z-index: -1;
+  will-change: background-position;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 @keyframes form-glow{
   0%{ background-position: 0% 50%; }
