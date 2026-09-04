@@ -163,21 +163,21 @@ ul{ list-style: none; }
 .form-card--embed::before{
   content: "";
   position: absolute;
-  inset: -4px;
-  border-radius: 32px;
-  background: linear-gradient(120deg, var(--primary), var(--accent), var(--primary), var(--accent));
-  background-size: 300% 300%;
-  animation: form-glow 5s ease infinite;
-  filter: blur(10px);
+  inset: -10px;
+  border-radius: 38px;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(198,39,59,0.38), transparent 60%),
+    radial-gradient(circle at 75% 85%, rgba(22,74,80,0.38), transparent 60%);
+  filter: blur(20px);
+  animation: form-glow-pulse 4s ease-in-out infinite;
   z-index: -1;
-  will-change: background-position;
+  will-change: opacity;
   transform: translateZ(0);
   backface-visibility: hidden;
 }
-@keyframes form-glow{
-  0%{ background-position: 0% 50%; }
-  50%{ background-position: 100% 50%; }
-  100%{ background-position: 0% 50%; }
+@keyframes form-glow-pulse{
+  0%, 100%{ opacity: 0.55; }
+  50%{ opacity: 1; }
 }
 
 /* Placeholder del modulo GHL — da rimuovere quando si incolla l'embed reale */
