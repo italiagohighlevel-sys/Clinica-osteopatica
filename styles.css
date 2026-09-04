@@ -150,9 +150,30 @@ ul{ list-style: none; }
   box-shadow: var(--shadow-sm);
 }
 .form-card--embed{
-  padding: 8px;
+  position: relative;
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  padding: 5px;
   height: 812px;
   overflow: hidden;
+  z-index: 1;
+}
+.form-card--embed::before{
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: calc(var(--radius-lg) + 4px);
+  background: linear-gradient(120deg, var(--primary), var(--accent), var(--primary), var(--accent));
+  background-size: 300% 300%;
+  animation: form-glow 5s ease infinite;
+  filter: blur(10px);
+  z-index: -1;
+}
+@keyframes form-glow{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
 }
 
 /* Placeholder del modulo GHL — da rimuovere quando si incolla l'embed reale */
