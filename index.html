@@ -39,7 +39,7 @@
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
         data-form-name="Form 0"
-        data-height="960"
+        data-height="800"
         data-layout-iframe-id="inline-eOlDmKfnY5RmF9lWI3iy"
         data-form-id="eOlDmKfnY5RmF9lWI3iy"
         data-cookie-consent="true"
@@ -348,6 +348,24 @@
 </a>
 
 <script src="https://go.automatoai.it/js/form_embed.js"></script>
+<script>
+  // GHL ripristina scrolling="yes" e overflow:auto sull'iframe dopo averlo
+  // ridimensionato al contenuto reale: lo forziamo indietro ogni volta che
+  // lo script GHL lo tocca, cosi' non compare mai lo scrollbar nativo.
+  (function () {
+    var iframe = document.getElementById('inline-eOlDmKfnY5RmF9lWI3iy');
+    if (!iframe) return;
+    var forceNoScroll = function () {
+      if (iframe.getAttribute('scrolling') !== 'no') iframe.setAttribute('scrolling', 'no');
+      if (iframe.style.overflow !== 'hidden') iframe.style.overflow = 'hidden';
+    };
+    forceNoScroll();
+    new MutationObserver(forceNoScroll).observe(iframe, {
+      attributes: true,
+      attributeFilter: ['scrolling', 'style'],
+    });
+  })();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
