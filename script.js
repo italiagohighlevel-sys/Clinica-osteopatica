@@ -22,13 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   targets.forEach((el) => observer.observe(el));
 
-  // La barra WhatsApp è predisposta ma non collegata: blocca il click finché
-  // non viene impostato un href reale (rimuovere questo blocco a integrazione avvenuta)
-  const waBar = document.querySelector('.whatsapp-bar');
-  if (waBar && waBar.getAttribute('href') === '#') {
-    waBar.addEventListener('click', (e) => e.preventDefault());
-  }
-
   // Numeri chiave: count-up quando entrano in vista, una sola volta
   const statNumbers = document.querySelectorAll('.stat-number');
   const animateCount = (el) => {
