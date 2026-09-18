@@ -258,35 +258,14 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   aspect-ratio: 16/9;
   background: linear-gradient(160deg, var(--primary) 0%, #0F3438 100%);
   border-radius: var(--radius-lg);
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap: 14px;
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
-.play-button{
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.4);
-  display:flex; align-items:center; justify-content:center;
-  color: #fff;
-  position: relative;
-}
-.play-button::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.5);
-  animation: play-pulse 2.2s ease-out infinite;
-}
-@keyframes play-pulse{
-  0%{ transform: scale(1); opacity: .8; }
-  100%{ transform: scale(1.6); opacity: 0; }
-}
-.video-placeholder-label{
-  color: rgba(255,255,255,0.75);
-  font-size: 13px;
-  letter-spacing: 0.03em;
+.video-placeholder iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 /* ============ CHECKLIST PROBLEMI ============ */
