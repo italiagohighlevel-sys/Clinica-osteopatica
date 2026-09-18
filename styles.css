@@ -253,6 +253,7 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .video-section{ background: var(--surface-muted); }
 
 .video-placeholder{
+  position: relative;
   margin: 28px auto 0;
   max-width: 400px;
   aspect-ratio: 9/16;
@@ -266,6 +267,52 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   height: 100%;
   border: 0;
   display: block;
+}
+
+.video-poster{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.video-poster::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 52, 56, 0.22);
+}
+.video-poster[hidden]{ display: none; }
+
+.play-button{
+  position: relative;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.4);
+  display:flex; align-items:center; justify-content:center;
+  color: #fff;
+}
+.play-button::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+  animation: play-pulse 2.2s ease-out infinite;
+}
+@keyframes play-pulse{
+  0%{ transform: scale(1); opacity: .8; }
+  100%{ transform: scale(1.6); opacity: 0; }
 }
 
 /* ============ CHECKLIST PROBLEMI ============ */

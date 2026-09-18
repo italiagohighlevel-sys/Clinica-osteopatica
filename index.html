@@ -80,12 +80,24 @@
     <p class="section-sub">Professionisti qualificati, un metodo condiviso e un percorso personalizzato per la tua salute.</p>
 
     <div class="video-placeholder">
+      <button
+        type="button"
+        class="video-poster"
+        id="videoPosterBtn"
+        style="background-image:url('assets/video-cover.jpg')"
+        aria-label="Riproduci il video di benvenuto"
+      >
+        <span class="play-button" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        </span>
+      </button>
       <iframe
-        src="https://player.vimeo.com/video/1209059433?title=0&byline=0&portrait=0"
+        id="videoIframe"
+        data-src="https://player.vimeo.com/video/1209059433?title=0&byline=0&portrait=0"
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
         allowfullscreen
         title="Video di benvenuto CO+ Clinica Osteopatica"
-        loading="lazy"
+        hidden
       ></iframe>
     </div>
   </div>

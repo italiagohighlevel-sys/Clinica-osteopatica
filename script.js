@@ -47,6 +47,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.4 });
   statNumbers.forEach((el) => statObserver.observe(el));
 
+  // Video di benvenuto: copertina statica (fotogramma con il logo,
+  // scelto a mano invece della miniatura di default di Vimeo) — al click
+  // mostra l'iframe vero e lo avvia in autoplay, invece di caricare
+  // Vimeo subito al caricamento della pagina.
+  const videoPosterBtn = document.getElementById('videoPosterBtn');
+  const videoIframe = document.getElementById('videoIframe');
+  if (videoPosterBtn && videoIframe) {
+    videoPosterBtn.addEventListener('click', () => {
+      videoIframe.src = videoIframe.dataset.src + '&autoplay=1';
+      videoIframe.hidden = false;
+      videoPosterBtn.hidden = true;
+    });
+  }
+
   // Barra di progresso scroll (orizzontale in alto su desktop, verticale a
   // sinistra su mobile — l'orientamento lo decide il CSS via media query,
   // qui impostiamo solo la percentuale come variabile CSS)
