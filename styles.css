@@ -285,29 +285,23 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
   justify-content: center;
   z-index: 2;
 }
-.video-poster::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 52, 56, 0.22);
-}
 .video-poster[hidden]{ display: none; }
 
 .play-button{
   position: relative;
   width: 64px; height: 64px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.4);
+  background: #fff;
+  box-shadow: 0 6px 20px -4px rgba(15,52,56,0.45);
   display:flex; align-items:center; justify-content:center;
-  color: #fff;
+  color: var(--primary);
 }
 .play-button::before{
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.9);
   animation: play-pulse 2.2s ease-out infinite;
 }
 @keyframes play-pulse{
