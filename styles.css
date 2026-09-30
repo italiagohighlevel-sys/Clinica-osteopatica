@@ -857,23 +857,27 @@ section h2{ font-size: clamp(24px, 4vw, 32px); max-width: 24ch; margin: 0 auto; 
 .btn-secondary{
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-  padding: 12px 26px;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 13px 28px;
   border-radius: 999px;
   border: 1.5px solid var(--border);
-  background: var(--surface);
-  color: var(--foreground);
+  background: var(--surface-muted);
+  color: var(--primary);
   font-weight: 600;
   font-size: 14.5px;
-  transition: border-color .2s ease, color .2s ease, background .2s ease, transform .2s ease;
+  box-shadow: var(--shadow-sm);
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
+.btn-secondary svg{ transition: transform .2s ease; }
 .btn-secondary:hover{
+  background: var(--primary);
   border-color: var(--primary);
-  color: var(--primary);
-  background: var(--surface-muted);
-  transform: translateY(-1px);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
+.btn-secondary:hover svg{ transform: translate(1px, -1px); }
 .thankyou-locations{ margin-top: 44px; }
 .thankyou-locations-label{
   display:block;
